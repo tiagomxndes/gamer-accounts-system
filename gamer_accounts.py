@@ -79,3 +79,34 @@ def read_accounts(filename):
 
     # Return all lists
     return players_id, pay_status, days, status
+
+# Option 1
+# Function to display all account details.
+# Receives the 4 lists and prints each account in a formatted way.
+# Shows player type (Pro/Casual), payment status (✅/❎),
+# and adds an alert if days since last password reset is over 90.
+
+def view_all_accounts(players_id, pay_status, days, status):
+
+    # Loop through all accounts
+    for i in range(len(players_id)):
+
+        # Determine player type based on ID
+        if players_id[i].startswith("PRO"):
+            player_type = "Pro"
+        else:
+            player_type = "Casual"
+
+        # Display payment status as symbol
+        if pay_status[i] == "Yes":
+            pay_symbol = "✅"
+        else:
+            pay_symbol = "❎"
+
+        # Add alert icon if days > 90
+        alert_icon = ""
+        if days[i] > 90:
+            alert_icon = "🚨"
+
+        # Print formatted account information
+        print(players_id[i], player_type, pay_symbol, status[i], alert_icon)
