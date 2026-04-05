@@ -110,3 +110,34 @@ def view_all_accounts(players_id, pay_status, days, status):
 
         # Print formatted account information
         print(players_id[i], player_type, pay_symbol, status[i], alert_icon)
+
+#Option 2
+# Function to delete an account record by ID.
+# Receives the 4 lists of account data.
+# Prompts the user to enter an ID to delete.
+# Checks if the ID exists in the players_id list:
+#   If not found -> prints "ID not found".
+#   If found -> removes the ID and all related data from all 4 lists.
+# Prints a success message after the deletion is completed.
+
+def del_account(players_id, pay_status, days, status):
+
+    # Ask user for his ID
+    user_id = input("What's your ID? ")
+
+    #Check if user's ID exists in the list
+    if user_id in players_id:
+        index =  players_id.index(user_id)
+
+        #Delete the record from all 4 lists
+        del players_id[index]
+        del pay_status[index]
+        del days[index]
+        del status[index]
+
+        #Prints success message after the deletion is completed
+        print(f"Account {user_id} has been deleted successfully.")
+
+    else:
+        #Prints error message if ID not found
+        print("ID not found.")
