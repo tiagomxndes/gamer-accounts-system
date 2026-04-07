@@ -141,3 +141,33 @@ def del_account(players_id, pay_status, days, status):
     else:
         #Prints error message if ID not found
         print("ID not found.")
+
+#Option 3
+# Function to add a new account record.
+# Receives the 4 lists of account data.
+# Prompts the user to enter a new ID.
+# Checks if the ID already exists in the players_id list:
+#   If it exists, prints an error message.
+#   If it doesn't exist, it adds the new ID to the list.
+# Adds default values to the other lists:
+#   Paid = "No", Days = 0, Status = "Active".
+# Prints a success message after the account is added.
+
+def add_account(players_id, pay_status, days, status):
+
+    #Ask user for his ID
+    new_id = input("Enter new ID: ")
+
+    #Check if the ID already exists
+    if new_id in players_id:
+        print("Error, the ID entered already exists.")
+
+    else:
+        #Add new record with the default values
+        players_id.append(new_id)
+        pay_status.append("No")
+        days.append(0)
+        status.append("Active")
+
+        #Print success message after new ID added
+        print(f"Account {new_id} was added successfully")
