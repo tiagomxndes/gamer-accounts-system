@@ -171,3 +171,17 @@ def add_account(players_id, pay_status, days, status):
 
         #Print success message after new ID added
         print(f"Account {new_id} was added successfully")
+
+
+
+#Testing my code
+
+# Load account data from college.txt to test functionality
+players_id, pay_status, days, status = read_accounts("college.txt")
+
+# Call the add_account function to test adding a new record
+add_account(players_id, pay_status, days, status)
+
+#Print all the accounts to verify if the new record was added correctly
+for i in range(len(players_id)):
+    print(players_id[i], pay_status[i], days[i], status[i])
