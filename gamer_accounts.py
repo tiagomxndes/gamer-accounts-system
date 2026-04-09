@@ -211,3 +211,9 @@ add_account(players_id, pay_status, days, status)
 #Print all the accounts to verify if the new record was added correctly
 for i in range(len(players_id)):
     print(players_id[i], pay_status[i], days[i], status[i])
+
+#Test update function
+update_status(players_id, status)
+
+#Print to verify change
+view_all_accounts(players_id, pay_status, days, status)
