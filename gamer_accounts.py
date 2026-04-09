@@ -172,6 +172,32 @@ def add_account(players_id, pay_status, days, status):
         #Print success message after new ID added
         print(f"Account {new_id} was added successfully")
 
+# Function 4
+# Function to update the status of an account
+# Received the players_id and status lists
+# Prompts the user to enter an ID
+# Checks if the ID exists in the players_id list
+#   If ID not found, print "ID not found"
+#   If ID found, asks for a new status and updates the status list
+# Prints a success message after the update is completed
+
+def update_status(players_id, status):
+    user_id = input("Enter your ID: ")
+
+    #Check if the ID exists
+    if user_id in players_id:
+        index=players_id.index(user_id)
+
+        #Ask user for new status
+        new_status = input("Enter your new status (Active/Locked/Disabled): ")
+        status[index]=new_status
+
+        #Print success message
+        print(f"Status for {user_id} has been successfully updated.")
+
+        #Print ID not found
+    else:
+        print("ID not found.")
 
 
 #Testing my code
