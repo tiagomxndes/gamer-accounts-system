@@ -233,3 +233,6 @@ update_status(players_id, status)
 
 #Print to verify change
 view_all_accounts(players_id, pay_status, days, status)
+
+# Test save function to write changes back to the file
+save_and_quit("college.txt", players_id, pay_status, days, status)
