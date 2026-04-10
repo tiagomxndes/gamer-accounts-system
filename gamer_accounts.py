@@ -54,13 +54,20 @@ Additional Notes:
 - All code included has been reviewed and understood.
 """
 
-# Function to read account details from file.
-# Runs once at the start of the program.
-# Opens the file, reads each line and splits the data.
-# Stores the data into 4 separate lists: players_id, pay_status, days, status.
-# Returns the 4 lists to be used in the rest of the program.
 
 def read_accounts(filename):
+    """
+    Reads account data from a file and stores into four lists.
+
+    :param filename: The name of the file containing account data.
+    :return: Four lists containing account data:
+        players_id: List of player IDs
+        pay_status: List of payment statuses ("Yes" or "No").
+        days: List of days since last password reset.
+        status: List of account statuses ("Active", "Locked", "Disabled")
+
+    """
+    # Create the 4 empty lists
     players_id = []
     pay_status = []
     days = []
@@ -69,6 +76,7 @@ def read_accounts(filename):
     # Open the file and read each line
     with open(filename) as file:
         for line in file:
+
             # Remove spaces/newlines and split by comma
             line_parts = line.strip().split(",")
 
