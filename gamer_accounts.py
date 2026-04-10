@@ -1,56 +1,57 @@
 """
 Gamer Accounts System - Core Functionality
 
-DATA:
-- Stored in "college.txt" as CSV: ID, Paid, Days, Status
-- ID: starts with "PRO" (Pro gamers) or "CAS" (Casual Players)
-- Paid: "Yes" or "No"
-- Days: integers, days since last password reset
-- Status: "Active", "Locked", "Disabled"
-- Read this file into 4 separate lists such as: ids, paid, days, status
+This program is designed to manage player accounts for an online gaming platform.
+It reads account data from a file, allows the user to perform various operations,
+and saves any changes back to the file.
 
-MENU OPTIONS: 
+The account data is stored in a text file ("college.txt") using CSV format:
+- ID, Paid, Days, Status
 
-Option 1 - VIEW ALL ACCOUNTS: (Write a function that receives all 4 lists, and displays the accounts in a formatted table.)
+Each field represents:
+- ID : Player identifier starting with "PRO" (Pro players) or "CAS" (Casual players)
+- Paid: Membership status ("Yes" or "No")
+- Days: Number of days since last password reset (integer)
+- Status: Account status ("Active", "Locked", "Disabled")
 
-    - Display all accounts in a formatted table.
-    - Show ✅ if Paid == "Yes", ❎ otherwise.
-    - Append "Casual" for IDs starting with "CAS", "Pro" for "PRO".
-    - Highlight accounts with days > 90 with 🚨.
+When the program starts, the file is read and the data is stored into four separate lists:
+- players_id, pay_status, days and status
+These lists are used throughout the program to manage and update account information.
 
-Option 2 - DELETE A RECORD: (Write a function that receives all 4 lists.)
+The program provides a menu with the following options:
 
-    - Prompt user for an ID.
-    - If ID not found, show "ID not found" message.
-    - If ID exists, remove it from all 4 lists.
-    - Print success message after deletion.
+Option 1 - View All Accounts
+Displays all account records in a formatted layout.
+Shows membership status using symbols (✅ / ❎),
+identifies player type (Pro or Casual), and highlights accounts that have not reset their password in over 90 days with an alert (🚨).
 
-Option 3 - ADD A NEW RECORD: (Write a function that receives all 4 lists.)
+Option 2 - Delete a Record
+Allows the user to remove an account by entering its ID.
+If the ID exists, the record is deleted from all lists.
+If not, an appropriate message is displayed.
 
-    - Ask user for a new ID.
-    - If ID already exists, show error message.
-    - If ID is new:
-        - Append ID to ids.
-        - Append default values to other lists:
-            Paid = "No", Days = 0, Status = "Active"
-    - Show success message after adding.
-    
-Option 4 - UPDATE STATUS: (Write a function that receives 2 lists: ID and status.)
+Option 3 - Add a New Record
+Allows the user to create a new account by entering a unique ID.
+If the ID does not already exist, it is added with default values:
+Paid = "No", Days = 0, Status = "Active".
 
-    - Ask user for an ID.
-    - If ID not found, show message.
-    - If ID exists, ask for new status and update status list.
-    - Show success message.
-    
-Option 8 - QUIT & SAVE: (Write a function that receives all 4 lists.)
+Option 4 - Status
+Allows the user to update the status of an existing account.
+The user enters an ID and provides a new status value.
 
-    - Write all 4 lists back to "college.txt" in CSV format.
-    - Exit the program after saving.
-    
-Additional notes:
-    - I should not use dictionaries or CSV module.
-    - I should only use Python concepts taught in MTU so far.
-    - Ensure I do understand all code I have included
+Option 5 - Waiting for instructions.
+
+Option 6 - Waiting for instructions.
+
+Option 7 - Waiting for instructions.
+
+Option 8 - Quit and save
+Saves all current data back to the file in CSV format and exists the program.
+
+Additional Notes:
+- The program does not use dictionaries or the CSV module, as per assignment requirements.
+- Only Python concepts covered in class are used.
+- All code included has been reviewed and understood.
 """
 
 # Function to read account details from file.
