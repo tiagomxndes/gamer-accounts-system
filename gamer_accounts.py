@@ -131,16 +131,25 @@ def view_all_accounts(players_id, pay_status, days, status):
         # Print formatted account information
         print(players_id[i], player_type, pay_symbol, status[i], alert_icon)
 
-#Option 2
-# Function to delete an account record by ID.
-# Receives the 4 lists of account data.
-# Prompts the user to enter an ID to delete.
-# Checks if the ID exists in the players_id list:
-#   If not found -> prints "ID not found".
-#   If found -> removes the ID and all related data from all 4 lists.
-# Prints a success message after the deletion is completed.
-
 def del_account(players_id, pay_status, days, status):
+    """
+    Deletes an account from the system based on user ID.
+
+    Receives four lists containing account data and removes the matching
+    record from all lists if the ID exists.
+
+    :param players_id: List of player IDs
+    :param pay_status: List of payment statuses ("Yes" or "No")
+    :param days: List of days since last password reset
+    :param status: List of account statuses ("Active", "Locked", "Disabled")
+    :return: None
+
+    Process:
+        - Prompts the user to enter an ID
+        - Checks if the ID exists in the players_id lists
+        - If found, deletes the record from all four lists
+        - If not found, displays an error message
+    """
 
     # Ask user for his ID
     user_id = input("What's your ID? ")
