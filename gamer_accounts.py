@@ -246,14 +246,26 @@ def update_status(players_id, status):
     else:
         print("ID not found.")
 
-# Option 8
-# Function to save all account data to file and exit the program.
-# Receives the 4 lists of account data.
-# Writes all data back to "college.txt" in CSV format.
-# Each record is written in the format: ID, Paid, Days, Status.
-# Exits the program after saving is completed
-
 def save_and_quit(filename, players_id, pay_status, days, status):
+    """
+    Saves all account data back to a file in CSV format and exits the program.
+
+    Receives four lists containing account data and writes them back to the
+    specified file, overwriting his existing content.
+
+    :param filename: The name of the file to save data to
+    :param players_id: List of player IDs
+    :param pay_status: List of payment statuses ("Yes" or "No")
+    :param days: List of fays since last password reset
+    :param status: List of account statuses ("Active", "Locked", "Disabled")
+    :return: None
+
+    Process:
+        - Opens the file in write mode (overwrites existing data)
+        - Writes each account in CSV format: ID, Paid, Days, Status
+        - Saves all records to the file
+        - Displays a confirmation message before exiting
+    """
 
     #Open file in W mode (overwrites existing data)
     with open(filename, "w") as file:
