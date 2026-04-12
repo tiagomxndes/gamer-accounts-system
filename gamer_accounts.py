@@ -210,16 +210,25 @@ def add_account(players_id, pay_status, days, status):
         #Print success message after new ID added
         print(f"Account {new_id} was added successfully")
 
-# Function 4
-# Function to update the status of an account
-# Received the players_id and status lists
-# Prompts the user to enter an ID
-# Checks if the ID exists in the players_id list
-#   If ID not found, print "ID not found"
-#   If ID found, asks for a new status and updates the status list
-# Prints a success message after the update is completed
-
 def update_status(players_id, status):
+    """
+    Updates the status of an existing account.
+    Receives the two lists containing account data and allows the user to update
+    the status of a specific account.
+
+    :param players_id: List of player IDs
+    :param status: List of account statuses ("Active", "Locked", "Disabled")
+    :return: None
+
+    Process:
+        - Prompts the user to enter an ID
+        - Checks if the ID exists in the players_id list
+        - If ID found, ask for a new status and updates it
+        - If ID not found, displays "ID not found"
+        - Displays a success message after updating the status
+    """
+
+    # Ask user for his ID
     user_id = input("Enter your ID: ")
 
     #Check if the ID exists
