@@ -251,6 +251,12 @@ def update_status(players_id, status):
 
         #Ask user for new status
         new_status = input("Enter your new status (Active/Locked/Disabled): ")
+
+        # Validate status input
+        if new_status not in ["Active", "Locked", "Disabled"]:
+            print("Invalid status")
+            return
+
         status[index]=new_status
 
         #Print success message
