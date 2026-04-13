@@ -262,7 +262,7 @@ def update_status(players_id, status):
         #Print success message
         print(f"Status for {user_id} has been successfully updated.")
 
-        #Print ID not found
+    #Print ID not found
     else:
         print("ID not found.")
 
@@ -321,7 +321,7 @@ def main():
         # Handles invalid input for menu selection to prevent crashes when a non-numeric value is entered
         try:
             user_choice = int(input("Please, select an option: "))
-        except:
+        except ValueError:
             print("Please enter a number.")
             continue
 
