@@ -311,7 +311,13 @@ def main():
         print("7. *** feature coming soon ***")
         print("8. Save and quit")
         print("===========================================")
-        user_choice = int(input("Please, select an option: "))
+
+        # Handles invalid input for menu selection to prevent crashes when a non-numeric value is entered
+        try:
+            user_choice = int(input("Please, select an option: "))
+        except:
+            print("Please enter a number.")
+            continue
 
         if user_choice == 1:
             view_all_accounts(players_id, pay_status, days, status)
