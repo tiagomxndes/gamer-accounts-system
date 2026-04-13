@@ -54,7 +54,9 @@ Additional Notes:
 - All code included has been reviewed and understood.
 """
 
-
+# ===========================
+# Load data function
+# ===========================
 def read_accounts(filename):
     """
     Reads account data from a file and stores into four lists.
@@ -89,6 +91,9 @@ def read_accounts(filename):
     # Return all lists
     return players_id, pay_status, days, status
 
+# ===========================
+# Option 1 - View accounts
+# ===========================
 def view_all_accounts(players_id, pay_status, days, status):
     """
     Displays all account details in a formatted output.
@@ -131,6 +136,9 @@ def view_all_accounts(players_id, pay_status, days, status):
         # Print formatted account information
         print(players_id[i], player_type, pay_symbol, status[i], alert_icon)
 
+# ==========================
+# Option 2 - Delete account
+# ===========================
 def del_account(players_id, pay_status, days, status):
     """
     Deletes an account from the system based on user ID.
@@ -171,6 +179,9 @@ def del_account(players_id, pay_status, days, status):
         #Prints error message if ID not found
         print("ID not found.")
 
+# ===========================
+# Option 3 - Load account
+# ===========================
 def add_account(players_id, pay_status, days, status):
     """
     Adds a new account to the system if the ID doesn't already exist.
@@ -210,6 +221,9 @@ def add_account(players_id, pay_status, days, status):
         #Print success message after new ID added
         print(f"Account {new_id} was added successfully")
 
+# ===========================
+# Option 4 - Update status
+# ===========================
 def update_status(players_id, status):
     """
     Updates the status of an existing account.
@@ -246,6 +260,9 @@ def update_status(players_id, status):
     else:
         print("ID not found.")
 
+# ===========================
+# Option 8 - Save and Quit
+# ===========================
 def save_and_quit(filename, players_id, pay_status, days, status):
     """
     Saves all account data back to a file in CSV format and exits the program.
@@ -274,6 +291,7 @@ def save_and_quit(filename, players_id, pay_status, days, status):
             file.write(line + "\n")
 
     print("Data saved successfully. Exiting program now.")
+
 
 #Testing my code
 
