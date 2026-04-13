@@ -134,7 +134,7 @@ def view_all_accounts(players_id, pay_status, days, status):
             alert_icon = "🚨"
 
         # Print formatted account information
-        print(players_id[i], player_type, pay_symbol, status[i], alert_icon)
+        print(f"{players_id[i]} {player_type} {pay_symbol} {status[i]} {alert_icon}")
 
 # ==========================
 # OPTION 2 - DELETE ACCOUNT
