@@ -116,8 +116,8 @@ def view_all_accounts(players_id, pay_status, days, status):
     # Loop through all accounts
     for i in range(len(players_id)):
 
-        # Determine player type based on ID
-        if players_id[i].startswith("PRO"):
+        # Determine player type based on ID (case-insensitive)
+        if players_id[i].upper().startswith("PRO"):
             player_type = "Pro"
         else:
             player_type = "Casual"
