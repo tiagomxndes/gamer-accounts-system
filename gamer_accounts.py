@@ -292,24 +292,58 @@ def save_and_quit(filename, players_id, pay_status, days, status):
 
     print("Data saved successfully. Exiting program now.")
 
+# ===========================
+# MAIN MENU SYSTEM
+# ===========================
 
-#Testing my code
+def main():
 
-# Load account data from college.txt to test functionality
-players_id, pay_status, days, status = read_accounts("college.txt")
+    players_id, pay_status, days, status = read_accounts("college.txt")
 
-# Call the add_account function to test adding a new record
-add_account(players_id, pay_status, days, status)
+    while True:
+        print("========== GAMER ACCOUNTS SYSTEM ==========")
+        print("1. View all accounts")
+        print("2. Delete account")
+        print("3. Add account")
+        print("4. Update status")
+        print("5. *** feature coming soon ***")
+        print("6. *** feature coming soon ***")
+        print("7. *** feature coming soon ***")
+        print("8. Save and quit")
+        print("===========================================")
+        user_choice = int(input("Please, select an option: "))
 
-#Print all the accounts to verify if the new record was added correctly
-for i in range(len(players_id)):
-    print(players_id[i], pay_status[i], days[i], status[i])
+        if user_choice == 1:
+            view_all_accounts(players_id, pay_status, days, status)
 
-#Test update function
-update_status(players_id, status)
+        elif user_choice == 2:
+            del_account(players_id, pay_status, days, status)
 
-#Print to verify change
-view_all_accounts(players_id, pay_status, days, status)
+        elif user_choice == 3:
+            add_account(players_id, pay_status, days, status)
 
-# Test save function to write changes back to the file
-save_and_quit("college.txt", players_id, pay_status, days, status)
+        elif user_choice == 4:
+            update_status(players_id, status)
+
+        # elif choice == 5:
+            # *** upcoming feature ***
+
+        #elif choice == 6:
+            # *** upcoming feature ***
+
+        #elif choice == 7:
+            # *** upcoming feature ***
+
+        elif user_choice == 8:
+            save_and_quit("college.txt", players_id, pay_status, days, status)
+            break
+
+        else:
+            print("Invalid option, please try again.")
+
+# ===========================
+# Program Start
+# ===========================
+
+if __name__ == '__main__':
+    main()
