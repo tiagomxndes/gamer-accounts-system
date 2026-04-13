@@ -55,7 +55,7 @@ Additional Notes:
 """
 
 # ===========================
-# Load data function
+# LOAD  DATA FUNCTION
 # ===========================
 def read_accounts(filename):
     """
@@ -92,7 +92,7 @@ def read_accounts(filename):
     return players_id, pay_status, days, status
 
 # ===========================
-# Option 1 - View accounts
+# OPTION 1 - VIEW ACCOUNTS
 # ===========================
 def view_all_accounts(players_id, pay_status, days, status):
     """
@@ -137,7 +137,7 @@ def view_all_accounts(players_id, pay_status, days, status):
         print(players_id[i], player_type, pay_symbol, status[i], alert_icon)
 
 # ==========================
-# Option 2 - Delete account
+# OPTION 2 - DELETE ACCOUNT
 # ===========================
 def del_account(players_id, pay_status, days, status):
     """
@@ -180,7 +180,7 @@ def del_account(players_id, pay_status, days, status):
         print("ID not found.")
 
 # ===========================
-# Option 3 - Load account
+# OPTION 3 - LOAD ACCOUNT
 # ===========================
 def add_account(players_id, pay_status, days, status):
     """
@@ -222,7 +222,7 @@ def add_account(players_id, pay_status, days, status):
         print(f"Account {new_id} was added successfully")
 
 # ===========================
-# Option 4 - Update status
+# OPTION 4 - UPDATE STATUS
 # ===========================
 def update_status(players_id, status):
     """
@@ -261,7 +261,7 @@ def update_status(players_id, status):
         print("ID not found.")
 
 # ===========================
-# Option 8 - Save and Quit
+# OPTION - 8 SAVE AND QUIT
 # ===========================
 def save_and_quit(filename, players_id, pay_status, days, status):
     """
@@ -342,7 +342,7 @@ def main():
             print("Invalid option, please try again.")
 
 # ===========================
-# Program Start
+# PROGRAM START
 # ===========================
 
 if __name__ == '__main__':
