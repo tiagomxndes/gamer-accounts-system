@@ -69,6 +69,7 @@ def read_accounts(filename):
         status: List of account statuses ("Active", "Locked", "Disabled")
 
     """
+
     # Create the 4 empty lists
     players_id = []
     pay_status = []
@@ -159,7 +160,6 @@ def del_account(players_id, pay_status, days, status):
         - If not found, displays an error message
     """
 
-    # Ask user for his ID
     user_id = input("What's your ID? ")
 
     #Check if user's ID exists in the list
@@ -204,7 +204,6 @@ def add_account(players_id, pay_status, days, status):
         - Displays a success message after adding the account
     """
 
-    #Ask user for his ID
     new_id = input("Enter new ID: ")
 
     #Check if the ID already exists
@@ -242,7 +241,6 @@ def update_status(players_id, status):
         - Displays a success message after updating the status
     """
 
-    # Ask user for his ID
     user_id = input("Enter your ID: ")
 
     #Check if the ID exists
