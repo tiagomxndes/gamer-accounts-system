@@ -308,6 +308,56 @@ def player_type_percentages(players_id):
     print(f"Professional players: {pro_players_percentage:.2f}%")
     print(f"Casual players: {casual_players_percentage:.2f}%")
     print("===========================================")
+
+# ===========================
+# OPTION 6 - EXPORT ACCOUNTS BY STATUS
+# ===========================
+
+def export_players_by_status(players_id, status):
+    """
+    Exports player IDs into separate files based on their account status.
+
+    Receives the list of player IDs and their corresponding account statuses, then
+    writes each ID into a specific file depending on whether the account is
+    Active, Locked or Disabled.
+
+    :param players_id: List of Player IDs
+    :param status: List of account statuses ("Active", "Locked", "Disabled")
+    :return: None
+
+    Process:
+        - Opens the three files separately : active.txt, locked.txt, disabled.txt
+        - Iterates through all players
+        - Writes each player ID into the corresponding file based on status.
+        - Close all the files after writing
+        - Displays a confirmation message.
+    """
+
+    #Open all the files separately
+    active_file = open("active.txt", "w")
+    locked_file = open("locked.txt", "w")
+    disabled_file = open("disabled.txt", "w")
+
+    #Go through all players
+    for i in range(len(players_id)):
+
+        if status[i] == "Active":
+            active_file.write(players_id[i] + "\n")
+
+        elif status[i] == "Locked":
+            locked_file.write(players_id[i] + "\n")
+
+        elif status[i] == "Disabled":
+            disabled_file.write(players_id[i] + "\n")
+
+    #Close all the files
+    active_file.close()
+    locked_file.close()
+    disabled_file.close()
+
+    print("All the accounts were successfully exported by status.")
+
+
 # ===========================
 # OPTION - 8 SAVE AND QUIT
 # ===========================
@@ -355,7 +405,7 @@ def main():
         print("3. Add account")
         print("4. Update status")
         print("5. Player type percentages")
-        print("6. *** feature coming soon ***")
+        print("6. Export account by status")
         print("7. *** feature coming soon ***")
         print("8. Save and quit")
         print("===========================================")
@@ -382,8 +432,8 @@ def main():
         elif user_choice == 5:
             player_type_percentages(players_id)
 
-        #elif choice == 6:
-            # *** upcoming feature ***
+        elif user_choice == 6:
+            export_players_by_status(players_id, status)
 
         #elif choice == 7:
             # *** upcoming feature ***
