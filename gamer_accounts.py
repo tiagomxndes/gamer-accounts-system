@@ -263,7 +263,51 @@ def update_status(players_id, status):
     #Print ID not found
     else:
         print("ID not found.")
+# ===========================
+# OPTION 5 - PLAYER TYPE PERCENTAGES
+# ===========================
 
+def player_type_percentages(players_id):
+    """
+    Calculates and displays the percentage of casual and professional gamers.
+
+    Receives the list of players IDs and determines how many players belong to each category
+    (Pro or Casual) and then converts these counts into percentages of the total number of players.
+
+    :param players_id: List of player IDs
+    :return: None
+
+    Process:
+        - Counts how many IDs start with "PRO"
+        - Counts how many IDs start with "CAS"
+        - Calculates the percentage of each type based on total players.
+        - Prints the results in a clear format
+    """
+
+    total_players = len(players_id)
+
+    if total_players == 0:
+        print("No players in the system.")
+
+    pro_players_count = 0
+    casual_players_count = 0
+
+    #Count player types
+    for players_id in players_id:
+        if players_id.upper().startswith("PRO"):
+            pro_players_count += 1
+        else:
+            casual_players_count += 1
+
+    #Calculate the percentages
+    pro_players_percentage = (pro_players_count/total_players) * 100
+    casual_players_percentage = (casual_players_count / total_players) * 100
+
+    #Print the results neatly
+    print("========= PLAYER TYPE PERCENTAGES =========")
+    print(f"Professional players: {pro_players_percentage:.2f}%")
+    print(f"Casual players: {casual_players_percentage:.2f}%")
+    print("===========================================")
 # ===========================
 # OPTION - 8 SAVE AND QUIT
 # ===========================
@@ -310,7 +354,7 @@ def main():
         print("2. Delete account")
         print("3. Add account")
         print("4. Update status")
-        print("5. *** feature coming soon ***")
+        print("5. Player type percentages")
         print("6. *** feature coming soon ***")
         print("7. *** feature coming soon ***")
         print("8. Save and quit")
@@ -335,8 +379,8 @@ def main():
         elif user_choice == 4:
             update_status(players_id, status)
 
-        # elif choice == 5:
-            # *** upcoming feature ***
+        elif user_choice == 5:
+            player_type_percentages(players_id)
 
         #elif choice == 6:
             # *** upcoming feature ***
