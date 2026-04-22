@@ -266,7 +266,6 @@ def update_status(players_id, status):
 # ===========================
 # OPTION 5 - PLAYER TYPE PERCENTAGES
 # ===========================
-
 def player_type_percentages(players_id):
     """
     Calculates and displays the percentage of casual and professional gamers.
@@ -312,7 +311,6 @@ def player_type_percentages(players_id):
 # ===========================
 # OPTION 6 - EXPORT ACCOUNTS BY STATUS
 # ===========================
-
 def export_players_by_status(players_id, status):
     """
     Exports player IDs into separate files based on their account status.
@@ -357,6 +355,22 @@ def export_players_by_status(players_id, status):
 
     print("All the accounts were successfully exported by status.")
 
+# ===========================
+# OPTION - 7 DISABLE UNPAID ACCOUNTS
+# ===========================
+def disable_unpaid_account(pay_status, status):
+
+    updated_count = 0
+
+    #Go through all accounts
+    for i in range(len(pay_status)):
+
+        #Check the conditions
+        if pay_status[i] == "No" and status[i] == "Active":
+            status[i] = "Disabled"
+            updated_count += 1
+
+    return updated_count
 
 # ===========================
 # OPTION - 8 SAVE AND QUIT
@@ -406,7 +420,7 @@ def main():
         print("4. Update status")
         print("5. Player type percentages")
         print("6. Export account by status")
-        print("7. *** feature coming soon ***")
+        print("7. Disable unpaid accounts")
         print("8. Save and quit")
         print("===========================================")
 
@@ -435,8 +449,9 @@ def main():
         elif user_choice == 6:
             export_players_by_status(players_id, status)
 
-        #elif choice == 7:
-            # *** upcoming feature ***
+        elif user_choice == 7:
+            updated_records = disable_unpaid_account(pay_status, status)
+            print(f"{updated_records} accounts were disabled due to non-payment.")
 
         elif user_choice == 8:
             save_and_quit("college.txt", players_id, pay_status, days, status)
