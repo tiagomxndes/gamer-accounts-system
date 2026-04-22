@@ -39,11 +39,19 @@ Option 4 - Status
 Allows the user to update the status of an existing account.
 The user enters an ID and provides a new status value.
 
-Option 5 - Waiting for instructions.
+Option 5 - Player Type Percentages
+Calculates and displays the percentage of professional and casual players based on
+the total number of accounts.
 
-Option 6 - Waiting for instructions.
+Option 6 - Export Accounts by Status
+Writes player IDs into separate files based on their account status:
+- active.txt for Active accounts
+- locked.txt for Locked accounts
+- disabled.txt for Disabled accounts
 
-Option 7 - Waiting for instructions.
+Option 7 -Disable Unpaid accounts
+Checks all accounts and disables those that have not paid their membership fee
+("No") and are currently "Active. Displays the number of accounts updated.
 
 Option 8 - Quit and save
 Saves all current data back to the file in CSV format and exists the program.
@@ -263,6 +271,7 @@ def update_status(players_id, status):
     #Print ID not found
     else:
         print("ID not found.")
+
 # ===========================
 # OPTION 5 - PLAYER TYPE PERCENTAGES
 # ===========================
