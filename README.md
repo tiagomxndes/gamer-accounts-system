@@ -1,6 +1,8 @@
 # Gamer Accounts System
 
-A command-line tool for managing player accounts on an online gaming platform. Built in Python using only core language features, no external libraries, no dictionaries, just lists and functions.
+A command-line tool for managing player accounts on an online gaming platform. Built in Python using only core language features — no external libraries, no dictionaries, just lists and functions.
+
+This was my first-year project for the Software Development degree at MTU (Munster Technological University).
 
 ## Overview
 
@@ -18,7 +20,7 @@ Data format: ID, Paid, Days, Status
 ## Features
 
 1. View All Accounts
-Displays every account in a formatted table payment status shown with symbols, player type identified (Pro/Casual), and an alert for any account over 90 days since its last password reset.
+Displays every account in a formatted table — payment status shown with symbols, player type identified (Pro/Casual), and an alert for any account over 90 days since its last password reset.
 
 2. Delete a Record
 Remove an account by ID. Displays an error if the ID doesn't exist.
@@ -44,8 +46,8 @@ Writes all current data back to college.txt in CSV format and exits.
 ## Design Notes
 
 This project was built under a specific set of constraints:
-- No dictionaries, data is stored and managed using four parallel lists (players_id, pay_status, days, status)
-- No CSV module, file parsing is done manually with string splitting
+- No dictionaries — data is stored and managed using four parallel lists (players_id, pay_status, days, status)
+- No CSV module — file parsing is done manually with string splitting
 - Only core Python concepts (functions, loops, conditionals, file I/O)
 
 These constraints were part of the assignment brief, not a design preference — a dictionary- or class-based approach would simplify a lot of this logic, and is something I plan to revisit as a refactor exercise once I've covered OOP.
