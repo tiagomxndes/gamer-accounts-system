@@ -1,65 +1,11 @@
 """
-Gamer Accounts System - Core Functionality
+Gamer Accounts System
 
-This program is designed to manage player accounts for an online gaming platform.
-It reads account data from a file, allows the user to perform various operations,
-and saves any changes back to the file.
+A CLI tool to manage player accounts for a gaming platform — read, add, 
+delete, update, and export account data from a CSV-style text file.
 
-The account data is stored in a text file ("college.txt") using CSV format:
-- ID, Paid, Days, Status
-
-Each field represents:
-- ID : Player identifier starting with "PRO" (Pro players) or "CAS" (Casual players)
-- Paid: Membership status ("Yes" or "No")
-- Days: Number of days since last password reset (integer)
-- Status: Account status ("Active", "Locked", "Disabled")
-
-When the program starts, the file is read and the data is stored into four separate lists:
-- players_id, pay_status, days and status
-These lists are used throughout the program to manage and update account information.
-
-The program provides a menu with the following options:
-
-Option 1 - View All Accounts
-Displays all account records in a formatted layout.
-Shows membership status using symbols (✅ / ❎),
-identifies player type (Pro or Casual), and highlights accounts that have not reset their password in over 90 days with an alert (🚨).
-
-Option 2 - Delete a Record
-Allows the user to remove an account by entering its ID.
-If the ID exists, the record is deleted from all lists.
-If not, an appropriate message is displayed.
-
-Option 3 - Add a New Record
-Allows the user to create a new account by entering a unique ID.
-If the ID does not already exist, it is added with default values:
-Paid = "No", Days = 0, Status = "Active".
-
-Option 4 - Status
-Allows the user to update the status of an existing account.
-The user enters an ID and provides a new status value.
-
-Option 5 - Player Type Percentages
-Calculates and displays the percentage of professional and casual players based on
-the total number of accounts.
-
-Option 6 - Export Accounts by Status
-Writes player IDs into separate files based on their account status:
-- active.txt for Active accounts
-- locked.txt for Locked accounts
-- disabled.txt for Disabled accounts
-
-Option 7 -Disable Unpaid accounts
-Checks all accounts and disables those that have not paid their membership fee
-("No") and are currently "Active. Displays the number of accounts updated.
-
-Option 8 - Quit and save
-Saves all current data back to the file in CSV format and exists the program.
-
-Additional Notes:
-- The program does not use dictionaries or the CSV module, as per assignment requirements.
-- Only Python concepts covered in class are used.
-- All code included has been reviewed and understood.
+Features: account viewing with status alerts, payment tracking, 
+CSV import/export, and account lifecycle management (active/locked/disabled).
 """
 
 # ===========================
